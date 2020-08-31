@@ -15,4 +15,9 @@
     <string name="eight_button">8</string>
     <string name="nine_button">9</string>
     <string name="zero_button">0</string>
+    <string name="division">/</string>
+    <string name="multiplication">×</string>
+    <string name="equals">=</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
 </resources>

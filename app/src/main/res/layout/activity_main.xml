@@ -53,6 +53,349 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnclear"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/clear_button"
+                android:textSize="25sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btndel"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/delete_button"
+                android:textSize="25sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnop"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/percent_button"
+                android:textSize="25sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnop"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/division"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/seven_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/eight_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/nine_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnop"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/multiplication"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/four_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/five_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/six_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnop"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/minus"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/one_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/two_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/three_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnop"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/plus"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/zero_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/decimal_button"
+                android:textSize="40sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnnumber"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/answer_button"
+                android:textSize="25sp" />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:width="88dp"
+                android:height="88dp"
+                android:background="@drawable/btnop"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/equals"
+                android:textSize="40sp" />
+
         </LinearLayout>
 
     </LinearLayout>
