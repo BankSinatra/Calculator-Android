@@ -20,43 +20,61 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(CalculatorViewModel::class.java)
 
         binding.btn0.setOnClickListener {
-            Log.i("number", "0")
+            viewModel.addNum("0")
         }
 
         binding.btn1.setOnClickListener {
-            Log.i("number", "1")
+            viewModel.addNum("1")
         }
 
         binding.btn2.setOnClickListener {
-            Log.i("number", "2")
+            viewModel.addNum("2")
         }
 
         binding.btn3.setOnClickListener {
-            Log.i("number", "3")
+            viewModel.addNum("3")
         }
 
         binding.btn4.setOnClickListener {
-            Log.i("number", "4")
+            viewModel.addNum("4")
         }
 
         binding.btn5.setOnClickListener {
-            Log.i("number", "5")
+            viewModel.addNum("5")
         }
 
         binding.btn6.setOnClickListener {
-            Log.i("number", "6")
+            viewModel.addNum("6")
         }
 
         binding.btn7.setOnClickListener {
-            Log.i("number", "7")
+            viewModel.addNum("7")
         }
 
         binding.btn8.setOnClickListener {
-            Log.i("number", "8")
+            viewModel.addNum("8")
         }
 
         binding.btn9.setOnClickListener {
-            Log.i("number", "9")
+            viewModel.addNum("9")
+        }
+
+        binding.btnDecimal.setOnClickListener {
+            viewModel.addNum(".")
+        }
+
+        //Symbol Buttons
+        binding.btnPlus.setOnClickListener {
+            viewModel.addSymbol("+")
+        }
+        binding.btnSubtract.setOnClickListener {
+            viewModel.addSymbol("-")
+        }
+        binding.btnMultiplication.setOnClickListener {
+            viewModel.addSymbol("*")
+        }
+        binding.btnDivide.setOnClickListener {
+            viewModel.addSymbol("/")
         }
 
 
