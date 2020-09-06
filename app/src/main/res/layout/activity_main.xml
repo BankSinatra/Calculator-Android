@@ -90,8 +90,8 @@
                 android:textSize="25sp" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btn_percent"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
@@ -103,22 +103,24 @@
                 android:background="@drawable/btnop"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/percent_button"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btn_divide"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="0dp"
                 android:layout_weight="1"
                 android:width="88dp"
                 android:height="88dp"
                 android:background="@drawable/btnop"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/division"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
         </LinearLayout>
@@ -180,8 +182,8 @@
                 android:textSize="40sp" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btn_multiplication"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -194,6 +196,7 @@
                 android:background="@drawable/btnop"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/multiplication"
+                android:textColor="#FFFFFF"
                 android:textSize="40sp" />
 
         </LinearLayout>
@@ -255,8 +258,8 @@
                 android:textSize="40sp" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btn_subtract"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -269,6 +272,7 @@
                 android:background="@drawable/btnop"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/minus"
+                android:textColor="#FFFFFF"
                 android:textSize="40sp" />
 
         </LinearLayout>
@@ -329,8 +333,8 @@
                 android:textSize="40sp" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btn_plus"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -343,6 +347,7 @@
                 android:background="@drawable/btnop"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/plus"
+                android:textColor="#FFFFFF"
                 android:textSize="40sp" />
 
         </LinearLayout>
@@ -403,8 +408,8 @@
                 android:textSize="25sp" />
 
             <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/btn_solve"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -417,6 +422,7 @@
                 android:background="@drawable/btnop"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/equals"
+                android:textColor="#FFFFFF"
                 android:textSize="40sp" />
 
         </LinearLayout>
