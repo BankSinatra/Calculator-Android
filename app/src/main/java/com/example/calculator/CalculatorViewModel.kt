@@ -3,6 +3,8 @@ package com.example.calculator
 import androidx.lifecycle.ViewModel
 import org.mariuszgromada.math.mxparser.Expression
 import java.lang.NumberFormatException
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 class CalculatorViewModel : ViewModel() {
     private lateinit var evalText: MutableList<String>
@@ -16,6 +18,16 @@ class CalculatorViewModel : ViewModel() {
         displayText.clear()
 
     }
+
+    private val _inputText = MutableLiveData<String>()
+    val inputText: LiveData<String>
+        get() = _inputText
+
+    private val _evaluatedText = MutableLiveData<String>()
+    val evaluatedText: LiveData<String>
+        get() = _evaluatedText
+
+
 
     private fun resetdisplay(){
         displayText.clear()
@@ -65,7 +77,7 @@ class CalculatorViewModel : ViewModel() {
     }
 
     private fun solve(){
-        val expression = Expression(evalText.toString())
+        //val expression = Expression(evalText.toString())
         evalText.toString()
     }
 }

@@ -3,6 +3,7 @@ package com.example.calculator
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.calculator.databinding.ActivityMainBinding
 
@@ -76,6 +77,15 @@ class MainActivity : AppCompatActivity() {
         binding.btnDivide.setOnClickListener {
             viewModel.addSymbol("/")
         }
+
+        //TextFields
+        viewModel.inputText.observe(this, Observer {input ->
+            binding.inputLine.text = input
+        })
+
+        viewModel.evaluatedText.observe(this, Observer {output ->
+            binding.evalLine.text = output
+        })
 
 
     }
