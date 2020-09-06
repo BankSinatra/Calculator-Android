@@ -7,17 +7,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
 class CalculatorViewModel : ViewModel() {
-    private lateinit var evalText: MutableList<String>
-    private lateinit var displayText: MutableList<String>
-    private lateinit var numberCreator: MutableList<String>
-    private var symbolused:Boolean = false
+    private var evalText: MutableList<String> = mutableListOf()
+    private var displayText: MutableList<String> = mutableListOf()
+    private var numberCreator: MutableList<String> = mutableListOf()
+    private var symbolUsed:Boolean = false
     private lateinit var answer: String
-
-    init {
-        evalText.clear()
-        displayText.clear()
-
-    }
 
     private val _inputText = MutableLiveData<String>()
     val inputText: LiveData<String>
@@ -37,14 +31,14 @@ class CalculatorViewModel : ViewModel() {
         numberCreator.add(num)
         evalText.add(num)
         displayText.add(num)
-        symbolused = false
+        symbolUsed = false
+        updateText(num)
     }
 
     private fun updateText(text: String){
         try {
             text.toFloat()
-            numberCreator.add(text)
-            displayText.add(text)
+            _inputText.value = displayText.toString().replace("[", "").replace("]", "").replace(",", "")
         } catch(a:NumberFormatException){
             when(text){
                 "*" -> displayText.add("×")
@@ -58,12 +52,11 @@ class CalculatorViewModel : ViewModel() {
 
 
     fun addSymbol(symbol:String){
-        if(!symbolused) {
-            evalText.add(numberCreator.toString())
+        if(!symbolUsed) {
             numberCreator.clear()
             evalText.add(symbol)
             updateText(symbol)
-            symbolused = true
+            symbolUsed = true
         }
     }
 

@@ -79,11 +79,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         //TextFields
-        viewModel.inputText.observe(this, Observer {input ->
+        viewModel.inputText.observe(this, {input ->
             binding.inputLine.text = input
         })
 
-        viewModel.evaluatedText.observe(this, Observer {output ->
+        viewModel.evaluatedText.observe(this, {output ->
             binding.evalLine.text = output
         })
 
