@@ -1,8 +1,8 @@
 package com.example.calculator
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import org.mariuszgromada.math.mxparser.Expression
-import java.lang.NumberFormatException
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
@@ -36,18 +36,13 @@ class CalculatorViewModel : ViewModel() {
     }
 
     private fun updateText(text: String){
-        try {
-            text.toFloat()
-            _inputText.value = displayText.toString().replace("[", "").replace("]", "").replace(",", "")
-        } catch(a:NumberFormatException){
             when(text){
                 "*" -> displayText.add("×")
                 "/" -> displayText.add("÷")
                 "+" -> displayText.add("+")
                 "-" -> displayText.add("-")
-                "." -> displayText.add(".")
             }
-        }
+            _inputText.value = displayText.toString().replace("[", "").replace("]", "").replace(",", "").replace(" ", "")
     }
 
 
@@ -70,7 +65,7 @@ class CalculatorViewModel : ViewModel() {
     }
 
     private fun solve(){
-        //val expression = Expression(evalText.toString())
+        val expression = Expression(evalText.toString())
         evalText.toString()
     }
 }
