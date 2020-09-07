@@ -87,6 +87,9 @@ class MainActivity : AppCompatActivity() {
             binding.evalLine.text = output
         })
 
+        binding.btnDelete.setOnClickListener {
+            viewModel.delete()
+        }
 
     }
 }

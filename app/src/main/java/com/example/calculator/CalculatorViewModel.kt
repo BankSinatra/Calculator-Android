@@ -35,12 +35,15 @@ class CalculatorViewModel : ViewModel() {
         updateText(num)
     }
 
-    private fun updateText(text: String){
+    private fun updateText(text : String = " "){
             when(text){
                 "*" -> displayText.add("×")
                 "/" -> displayText.add("÷")
                 "+" -> displayText.add("+")
                 "-" -> displayText.add("-")
+                " " -> {evalText.removeLast()
+                    displayText.removeLast()
+                }
             }
             _inputText.value = displayText.toString().replace("[", "").replace("]", "").replace(",", "").replace(" ", "")
     }
@@ -60,12 +63,14 @@ class CalculatorViewModel : ViewModel() {
         displayText.clear()
     }
 
-    private fun delete(){
-        evalText.removeLast()
+    fun delete(){
+        if (evalText.size > 0){
+            updateText()
+        }
     }
 
     private fun solve(){
-        val expression = Expression(evalText.toString())
+        Expression(evalText.toString())
         evalText.toString()
     }
 }
