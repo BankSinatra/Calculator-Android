@@ -91,5 +91,9 @@ class MainActivity : AppCompatActivity() {
             viewModel.delete()
         }
 
+        binding.btnSolve.setOnClickListener {
+            viewModel.solve()
+        }
+
     }
 }
