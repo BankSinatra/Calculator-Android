@@ -95,5 +95,13 @@ class MainActivity : AppCompatActivity() {
             viewModel.solve()
         }
 
+        binding.btnClear.setOnClickListener {
+            viewModel.clear()
+        }
+
+        binding.btnAnswer.setOnClickListener {
+            viewModel.answer()
+        }
+
     }
 }

@@ -45,8 +45,10 @@ class CalculatorViewModel : ViewModel() {
                 "+" -> displayText.add("+")
                 "-" -> displayText.add("-")
                 " " -> {
-                    evalText.removeLast()
-                    displayText.removeLast()
+                    if (evalText.size > 0) {
+                        evalText.removeLast()
+                        displayText.removeLast()
+                    }
                 }
             }
             _inputText.value = displayText.toString().replace("[", "").replace("]", "").replace(
@@ -65,15 +67,21 @@ class CalculatorViewModel : ViewModel() {
         }
     }
 
-    private fun clear(){
+    fun clear(){
         evalText.clear()
         displayText.clear()
+        Log.i("size", "${evalText.size}")
+        if (evalText.size >= 0){
+            updateText()
+        }
+        evaluate(true)
     }
 
     fun delete(){
         if (evalText.size > 0){
             updateText()
         }
+        evaluate()
     }
 
     private fun trimTrailingZero(value: String?): String? {
@@ -90,7 +98,7 @@ class CalculatorViewModel : ViewModel() {
         }
     }
 
-    private fun evaluate(){
+    private fun evaluate(clear:Boolean = false){
         val e = Expression(
             evalText.toString()
                 .replace("[", "")
@@ -99,8 +107,19 @@ class CalculatorViewModel : ViewModel() {
                 .replace(" ", "")
         )
 
+        answer = e.calculate().toString()
+        if (clear){
+            _evaluatedText.value = ""
+        }
         if(!e.calculate().isNaN()){
             _evaluatedText.value = trimTrailingZero(e.calculate().toString()).toString()
+        }
+    }
+
+    fun answer(){
+        if(!answer.isBlank()){
+            numberCreator.add("ANS")
+            evalText.add(answer)
         }
     }
 
