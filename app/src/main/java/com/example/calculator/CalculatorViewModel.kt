@@ -13,6 +13,7 @@ class CalculatorViewModel : ViewModel() {
     private var numberCreator: MutableList<String> = mutableListOf()
     private var symbolUsed:Boolean = false
     private lateinit var answer: String
+    private var ansUsed = false
 
 
     private val _inputText = MutableLiveData<String>()
@@ -23,11 +24,6 @@ class CalculatorViewModel : ViewModel() {
     val evaluatedText: LiveData<String>
         get() = _evaluatedText
 
-
-
-    private fun resetdisplay(){
-        displayText.clear()
-    }
 
     fun addNum(num: String){
         numberCreator.add(num)
@@ -50,6 +46,7 @@ class CalculatorViewModel : ViewModel() {
                         displayText.removeLast()
                     }
                 }
+                "ans" -> displayText.add("ANS")
             }
             _inputText.value = displayText.toString().replace("[", "").replace("]", "").replace(
                 ",",
@@ -64,6 +61,7 @@ class CalculatorViewModel : ViewModel() {
             evalText.add(symbol)
             updateText(symbol)
             symbolUsed = true
+            ansUsed = true
         }
     }
 
@@ -117,13 +115,16 @@ class CalculatorViewModel : ViewModel() {
     }
 
     fun answer(){
-        if(!answer.isBlank()){
-            numberCreator.add("ANS")
-            evalText.add(answer)
+        if(!answer.isBlank() && ansUsed){
+            evalText.add("(${answer})")
+            Log.i("answer", evalText.toString())
+            updateText("ans")
+            ansUsed = false
         }
     }
 
     fun solve(){
+        answer = _evaluatedText.value.toString()
         _inputText.value = _evaluatedText.value
         _evaluatedText.value = ""
         displayText.clear()
