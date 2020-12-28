@@ -115,7 +115,7 @@ class CalculatorViewModel : ViewModel() {
     }
 
     fun answer(){
-        if(!answer.isBlank() && ansUsed){
+        if(answer.isNotBlank() && ansUsed){
             evalText.add("(${answer})")
             Log.i("answer", evalText.toString())
             updateText("ans")
