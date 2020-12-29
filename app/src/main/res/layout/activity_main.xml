@@ -36,12 +36,12 @@
             tools:text="51+51" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="19dp"
             android:layout_height="match_parent"
             android:text=""
             android:textColor="#B51F1F"
             android:layout_weight="1"
-            tools:text="      " />
+            tools:text="" />
     </LinearLayout>
 
     <LinearLayout
@@ -67,12 +67,12 @@
             android:layout_weight="9"
             tools:text="102" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="19dp"
             android:layout_height="match_parent"
             android:text=""
             android:textColor="#B51F1F"
             android:layout_weight="1"
-            tools:text="      " />
+            tools:text="" />
     </LinearLayout>
 
     <LinearLayout
