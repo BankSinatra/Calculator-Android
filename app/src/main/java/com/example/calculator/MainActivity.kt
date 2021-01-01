@@ -78,15 +78,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.addSymbol("/")
         }
 
-        //TextFields
-        viewModel.inputText.observe(this, {input ->
-            binding.inputLine.text = input
-        })
-
-        viewModel.evaluatedText.observe(this, {output ->
-            binding.evalLine.text = output
-        })
-
+        //Number Manipulation Buttons
         binding.btnDelete.setOnClickListener {
             viewModel.delete()
         }
@@ -102,6 +94,15 @@ class MainActivity : AppCompatActivity() {
         binding.btnAnswer.setOnClickListener {
             viewModel.answer()
         }
+
+        //TextFields
+        viewModel.inputText.observe(this, {input ->
+            binding.inputLine.text = input
+        })
+
+        viewModel.evaluatedText.observe(this, {output ->
+            binding.evalLine.text = output
+        })
 
     }
 }

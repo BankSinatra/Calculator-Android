@@ -8,9 +8,15 @@ import org.mariuszgromada.math.mxparser.Expression
 
 
 class CalculatorViewModel : ViewModel() {
-    private var evalText: MutableList<String> = mutableListOf()
     private var displayText: MutableList<String> = mutableListOf()
+    //displayText is just what the user sees
+    private var evalText: MutableList<String> = mutableListOf()
+    //evalText does the actual under-the-hood calculations
     private var numberCreator: MutableList<String> = mutableListOf()
+    //Creates the singular numbers
+    private var numberList: MutableList<String> = mutableListOf()
+    private var symbolList: MutableList<String> = mutableListOf()
+    private var index1: Int = 0
     private var symbolUsed:Boolean = false
     private lateinit var answer: String
     private var ansUsed = false
@@ -24,11 +30,15 @@ class CalculatorViewModel : ViewModel() {
     val evaluatedText: LiveData<String>
         get() = _evaluatedText
 
-
+    //This is the function for all number inputs (plus the decimal)
     fun addNum(num: String){
-        numberCreator.add(num)
-        evalText.add(num)
         displayText.add(num)
+        if(numberCreator.size < 1) {
+            numberList.add(index1, "")
+        }
+        numberCreator.add(num)
+        numberList[index1] = displayList(numberCreator)
+        evalText.add(num)
         symbolUsed = false
         updateText(num)
         evaluate()
@@ -48,20 +58,18 @@ class CalculatorViewModel : ViewModel() {
                 }
                 "ans" -> displayText.add("ANS")
             }
-            _inputText.value = displayText.toString().replace("[", "").replace("]", "").replace(
-                ",",
-                ""
-            ).replace(" ", "")
+            _inputText.value = displayList(displayText)
     }
 
 
     fun addSymbol(symbol: String){
         if(!symbolUsed) {
             numberCreator.clear()
+            index1 ++
+            symbolList.add(symbol)
             evalText.add(symbol)
             updateText(symbol)
             symbolUsed = true
-            ansUsed = true
         }
     }
 
@@ -98,19 +106,17 @@ class CalculatorViewModel : ViewModel() {
 
     private fun evaluate(clear:Boolean = false){
         val e = Expression(
-            evalText.toString()
-                .replace("[", "")
-                .replace("]", "")
-                .replace(",", "")
-                .replace(" ", "")
+            displayList(evalText)
         )
 
         answer = e.calculate().toString()
+
+        if(!e.calculate().isNaN() && numberList.size > 2 && symbolList.size > 1){
+            _evaluatedText.value = trimTrailingZero(e.calculate().toString()).toString()
+        }//^This is the answer preview^
+
         if (clear){
             _evaluatedText.value = ""
-        }
-        if(!e.calculate().isNaN()){
-            _evaluatedText.value = trimTrailingZero(e.calculate().toString()).toString()
         }
     }
 
@@ -129,5 +135,13 @@ class CalculatorViewModel : ViewModel() {
         _evaluatedText.value = ""
         displayText.clear()
         evalText.clear()
+    }
+
+    private fun displayList(list: MutableList<String>):String{
+        return list.toString()
+            .replace("[", "")
+            .replace("]", "")
+            .replace(",", "")
+            .replace(" ", "")
     }
 }
