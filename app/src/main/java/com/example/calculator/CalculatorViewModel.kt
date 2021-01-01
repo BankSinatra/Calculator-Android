@@ -20,6 +20,7 @@ class CalculatorViewModel : ViewModel() {
     private var symbolUsed:Boolean = false
     private lateinit var answer: String
     private var ansUsed = false
+    private var elementCount = numberList.size + symbolList.size
 
 
     private val _inputText = MutableLiveData<String>()
@@ -44,6 +45,24 @@ class CalculatorViewModel : ViewModel() {
         evaluate()
     }
 
+    fun addSymbol(symbol: String){
+        if(!symbolUsed && numberList.size > 0) {
+            symbolList.add(symbol)
+            numberCreator.clear()
+            index1 ++
+            evalText.add(symbol)
+            updateText(symbol)
+            symbolUsed = true
+        }
+    }
+
+    fun delete(){
+        if (evalText.size > 0){
+            updateText()
+        }
+        evaluate()
+    }
+
     private fun updateText(text: String = " "){
             when(text){
                 "*" -> displayText.add("×")
@@ -54,6 +73,19 @@ class CalculatorViewModel : ViewModel() {
                     if (evalText.size > 0) {
                         evalText.removeLast()
                         displayText.removeLast()
+                        numberList[index1] = displayList(numberCreator)
+                        if(index1 > 0) {
+                            index1--
+                        }
+                        if(elementCount % 2 == 0){
+                            Log.d("delete", "$index1")
+                            Log.d("delete", "Number Creator: $numberCreator")
+                            Log.d("delete", "NumberList: $numberList")
+                        }else {
+                            numberCreator.clear()
+                        }
+
+                        numberCreator = numberList
                     }
                 }
                 "ans" -> displayText.add("ANS")
@@ -62,33 +94,18 @@ class CalculatorViewModel : ViewModel() {
     }
 
 
-    fun addSymbol(symbol: String){
-        if(!symbolUsed) {
-            numberCreator.clear()
-            index1 ++
-            symbolList.add(symbol)
-            evalText.add(symbol)
-            updateText(symbol)
-            symbolUsed = true
-        }
-    }
+
 
     fun clear(){
         evalText.clear()
         displayText.clear()
-        Log.i("size", "${evalText.size}")
         if (evalText.size >= 0){
             updateText()
         }
         evaluate(true)
     }
 
-    fun delete(){
-        if (evalText.size > 0){
-            updateText()
-        }
-        evaluate()
-    }
+
 
     private fun trimTrailingZero(value: String?): String? {
         return if (!value.isNullOrEmpty()) {
@@ -111,9 +128,11 @@ class CalculatorViewModel : ViewModel() {
 
         answer = e.calculate().toString()
 
-        if(!e.calculate().isNaN() && numberList.size > 2 && symbolList.size > 1){
+        if(!e.calculate().isNaN() && numberList.size >= 2 && symbolList.size >= 1){
             _evaluatedText.value = trimTrailingZero(e.calculate().toString()).toString()
-        }//^This is the answer preview^
+        }else{
+            Log.d("eval", "We're not evaluating yet")
+        }
 
         if (clear){
             _evaluatedText.value = ""
