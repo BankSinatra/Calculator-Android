@@ -34,13 +34,13 @@ class CalculatorViewModel : ViewModel() {
     //This is the function for all number inputs (plus the decimal)
     fun addNum(num: String){
         displayText.add(num)
+        evalText.add(num)
         if(numberCreator.size < 1) {
             numberList.add(index1, "")
             elementCount ++
         }
         numberCreator.add(num)
         numberList[index1] = displayList(numberCreator)
-        evalText.add(num)
         symbolUsed = false
         updateText(num)
         evaluate()
@@ -67,12 +67,12 @@ class CalculatorViewModel : ViewModel() {
             } else if(numberCreator.size == 1){
                 numberCreator.clear()
                 numberList.removeAt(index1)
-                index1--
-            }
-
-            if(symbolList.size > 0 && elementCount % 2 == 0){
+                elementCount --
+            }else if(symbolList.size > 0 && elementCount % 2 == 0){
                 symbolList.removeLast()
                 index1--
+                elementCount--
+                symbolUsed = false
                 for (n in numberList[index1]){
                     numberCreator.add(n.toString())
                 }
